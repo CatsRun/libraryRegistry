@@ -24,12 +24,15 @@ const getSingle = async (req, res, next) => {
 };
 
 // post createUser
-const createUsers = async (req, res) => {
+const createUser = async (req, res) => {
   const users = {
-    location_id: req.body.location_id,
-    location: req.body.location,
-    material_id: req.body.material_id,
-    materialName: req.body.materialName
+    user_id: req.body.user_id,
+    firstName: req.body.firstName,
+    lastName: req.body.lastName,
+    phoneNumber: req.body.phoneNumber,
+    email: req.body.email,
+    address: req.body.address,
+    memberStatus: req.body.memberStatus
   };
   const response = await mongodb.getDb().db().collection('users').insertOne(users);
   if (response.acknowledged) {
@@ -40,13 +43,16 @@ const createUsers = async (req, res) => {
 };
 
 // put updateUser
-const updateUsers = async (req, res) => {
+const updateUser = async (req, res) => {
   const userId = new ObjectId(req.params.id);
   const users = {
-    location_id: req.body.location_id,
-    location: req.body.location,
-    material_id: req.body.material_id,
-    materialName: req.body.materialNamey
+    user_id: req.body.user_id,
+    firstName: req.body.firstName,
+    lastName: req.body.lastName,
+    phoneNumber: req.body.phoneNumber,
+    email: req.body.email,
+    address: req.body.address,
+    memberStatus: req.body.memberStatus
   };
   const response = await mongodb.getDb().db().collection('users').replaceOne({ _id: userId }, users);
   if (response.acknowledged) {
@@ -56,7 +62,7 @@ const updateUsers = async (req, res) => {
   }
 };
 // delete deleteUser
-const deleteUsers = async (req, res) => {
+const deleteUser = async (req, res) => {
   const userId = new ObjectId(req.params.id);
   const response = await mongodb.getDb().db().collection('users').deleteOne({ _id: userId });
   if (response.acknowledged) {
@@ -67,6 +73,4 @@ const deleteUsers = async (req, res) => {
 };
 
 
-// module.exports = { getAll, getSingle, createUser, updateUser, deleteUser };
-
-module.exports = { getAll };
+module.exports = { getAll, getSingle, createUser, updateUser, deleteUser };

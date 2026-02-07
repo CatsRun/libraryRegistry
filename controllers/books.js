@@ -24,10 +24,12 @@ const getSingle = async (req, res, next) => {
   });
 };
 // post createBook
-const createBooks = async (req, res) => {
+const createBook = async (req, res) => {
   const books = {
     book_id: req.body.book_id,
-    isb: req.body.isb
+    isb: req.body.isb,
+    title: req.body.title,
+    author: req.body.author
   };
   const response = await mongodb.getDb().db().collection('books').insertOne(books);
   if (response.acknowledged) {
@@ -41,7 +43,9 @@ const updateBook = async (req, res) => {
   const userId = new ObjectId(req.params.id);
   const books = {
     book_id: req.body.book_id,
-    isb: req.body.isb
+    isb: req.body.isb,
+    title: req.body.title,
+    author: req.body.author
   };
   const response = await mongodb.getDb().db().collection('books').replaceOne({ _id: userId }, books);
   if (response.acknowledged) {
@@ -51,7 +55,7 @@ const updateBook = async (req, res) => {
   }
 };
 // delete deleteBook
-const deleteBooks = async (req, res) => {
+const deleteBook = async (req, res) => {
   const userId = new ObjectId(req.params.id);
   const response = await mongodb.getDb().db().collection('books').deleteOne({ _id: userId });
   if (response.acknowledged) {
@@ -62,6 +66,4 @@ const deleteBooks = async (req, res) => {
 };
 
 
-// module.exports = { getAll, getSingle, createBook, updateBook, deleteBook };
-
-module.exports = { getAll};
+module.exports = { getAll, getSingle, createBook, updateBook, deleteBook };
