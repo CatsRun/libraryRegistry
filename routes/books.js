@@ -8,12 +8,15 @@ const controller = require('../controllers/books');
 router.get('/', controller.getAll);
 
 // getSingle
-// router.get('/:id', controller.getSingle);
+router.get('/:id', controller.getSingle);
 
 // post createBook
+router.post('/', controller.createBook);
 
 // put updateBook
+router.put('/:id', controller.updateBook);
 
 // delete deleteBook
+router.delete('/:id', controller.deleteBook); 
 
 module.exports = router;

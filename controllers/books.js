@@ -26,8 +26,7 @@ const getSingle = async (req, res, next) => {
 // post createBook
 const createBook = async (req, res) => {
   const books = {
-    book_id: req.body.book_id,
-    isb: req.body.isb,
+    isbn: req.body.isbn,
     title: req.body.title,
     author: req.body.author
   };
@@ -42,8 +41,7 @@ const createBook = async (req, res) => {
 const updateBook = async (req, res) => {
   const userId = new ObjectId(req.params.id);
   const books = {
-    book_id: req.body.book_id,
-    isb: req.body.isb,
+    isbn: req.body.isbn,
     title: req.body.title,
     author: req.body.author
   };

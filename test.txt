@@ -1,0 +1,72 @@
+Localhost
+users
+GET
+ { 
+      "user_id":"002",
+    "firstName": "Mark",
+    "lastName": "Robbins",
+    "phoneNumber": "111-222-3333",
+    "email": "dan@abc.com",
+    "address": "123 ABC, Sesame Street",
+    "memberStatus": "Current"
+    },
+
+
+PUT"    { 
+      "user_id":"002",
+    "firstName": "Mark",
+    "lastName": "Robbins",
+    "phoneNumber": "111-222-3333",
+    "email": "dan@abc.com",
+    "address": "123 ABC, Sesame Street",
+    "memberStatus": "Expired"
+    },
+DELETE
+{ 
+      "user_id":"002",
+    "firstName": "Mark",
+    "lastName": "Robbins",
+    "phoneNumber": "111-222-3333",
+    "email": "dan@abc.com",
+    "address": "123 ABC, Sesame Street",
+    "memberStatus": "Expired"
+    },
+
+POST:    { 
+      "user_id":"002",
+    "firstName": "Mark",
+    "lastName": "Robbins",
+    "phoneNumber": "111-222-3333",
+    "email": "dan@abc.com",
+    "address": "123 ABC, Sesame Street",
+    "memberStatus": "Current"
+    },
+
+
+books
+GET
+{
+    "isbn": "978-1503215178",
+    "title": "The Secret Garden",
+    "author": "Frances Hodgson Burnett"
+    }
+
+  PUT{
+    "isbn": "978-1503215178",
+    "title": "The Secret Garden",
+    "author": "F. H. Burnett"
+    }
+
+  DELETE 
+  {
+    "isbn": "978-1503215178",
+    "title": "The Secret Garden",
+    "author": "F. H. Burnett"
+    }
+
+  POST
+  {
+    "isbn": "978-1503215178",
+    "title": "The Secret Garden",
+    "author": "Frances Hodgson Burnett"
+    }
