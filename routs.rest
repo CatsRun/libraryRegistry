@@ -1,0 +1,72 @@
+// LOCALHOST 
+//BOOKS
+ getAll GET http://localhost:8080/books
+
+ getOne GET http://localhost:8080/books/69872e99aece9f6fb2f9ef63 
+
+ POST 
+ {
+    "isbn": "978-1503215178",
+    "title": "The Secret Garden",
+    "author": "Frances Hodgson Burnett"
+    }
+
+ PUT
+
+ DELETE 
+
+
+//USERS
+  getAll GET http://localhost:8080/users
+
+ getOne GET http://localhost:8080/users/69872dd2594f61e1d32ca16e 
+  
+ POST 
+  { 
+    "user_id":"003",
+    "firstName": "Tom",
+    "lastName": "Cook",
+    "phoneNumber": "111-222-3333",
+    "email": "dan@abc.com",
+    "address": "123 ABC, Sesame Street",
+    "memberStatus": "Current"
+    },
+
+ PUT
+
+ DELETE 
+
+
+//Render
+//BOOKS
+ getAll GET https://libraryregistry.onrender.com/books 
+
+ getOne GET https://libraryregistry.onrender.com/books/69872e99aece9f6fb2f9ef63
+
+ POST 
+
+
+ PUT
+
+ DELETE 
+
+
+//USERS
+  getAll GET https://libraryregistry.onrender.com/users
+
+ getOne GET https://libraryregistry.onrender.com/users/69872dd2594f61e1d32ca16e 
+  
+ POST 
+  { 
+      "user_id":"003",
+    "firstName": "Tom",
+    "lastName": "Cook",
+    "phoneNumber": "111-222-3333",
+    "email": "dan@abc.com",
+    "address": "123 ABC, Sesame Street",
+    "memberStatus": "Current"
+    },
+
+ PUT
+
+ DELETE 
