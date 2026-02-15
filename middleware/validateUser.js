@@ -7,6 +7,12 @@ const express = require('express');
 validate.userRules = () => {
     return [
       // firstname is required and must be string
+        body ("user_id") //this checks to see if the id is valid. 
+        .trim()    
+        .escape()
+        .notEmpty()
+        .withMessage("Please provide your user id."),
+
       body("firstName")
         .trim()
         .escape()
@@ -23,23 +29,20 @@ validate.userRules = () => {
         .withMessage("Please provide your last name."), // on error this message is sent.
 
       body("email")
-        .trim()
-        .isEmail()
-        .normalizeEmail() // refer to validator.js docs
+        .notEmpty()
+        // .trim()
+        // .isEmail()
+        // .normalizeEmail() // refer to validator.js docs
         .withMessage("A valid email is required."),
 
         body ("phoneNumber")
         .trim()    
         .escape()
         .notEmpty()
-        .isLength({ min: 10 })
+        // .isLength({ min: 10 })
         .withMessage("Please provide a valid number."),
 
-        body ("user_id") //this checks to see if the id is valid. 
-        .trim()    
-        .escape()
-        .notEmpty()
-        .withMessage("Please provide your user id.")
+
     ]
 
 
