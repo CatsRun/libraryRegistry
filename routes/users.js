@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const controller = require('../controllers/users');
+const validate = require('../middleware/validateUser');
 
 // routes that connect to controllers functions
 
@@ -14,7 +15,7 @@ router.get('/:id', controller.getSingle);
 router.post('/', controller.createUser);
 
 // put updateUser
-router.put('/:id', controller.updateUser);  
+router.put('/:id', validate.userRules(), controller.updateUser);  
 
 // delete deleteUser
 router.delete('/:id', controller.deleteUser);
