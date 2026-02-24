@@ -9,15 +9,15 @@ const validate = require('../middleware/validateBook');
 router.get('/', controller.getAll);
 
 // getSingle
-router.get('/:id', validate.bookRules(controller.getSingle));
+router.get('/:id', controller.getSingle);
 
-// post createBook
-router.post('/', validate.bookRules(controller.createBook));
+// post, create new book
+router.post('/', validate.bookRules(), validate.checkBookData, controller.createBook);
 
 // put updateBook
-router.put('/:id', validate.bookRules(controller.updateBook));
+router.put('/:id', validate.bookRules(), validate.checkBookData, controller.updateBook);
 
 // delete deleteBook
-router.delete('/:id', validate.bookRules(controller.deleteBook)); 
+router.delete('/:id', controller.deleteBook); 
 
 module.exports = router;

@@ -23,13 +23,14 @@ const validate = require('../middleware/validateUser');
 module.exports = router;
 
 // // getSingle
-router.get('/:id', validate.userRules(controller.getSingle));
+router.get('/:id',  controller.getSingle);
 
 // post createUser
-router.post('/', validate.userRules(controller.createUser));
+router.post('/', validate.userRules(), validate.checkUserData,controller.createUser);
 
 // put updateUser
-router.put('/:id', validate.userRules(controller.updateUser));  
+router.put('/:id', validate.userRules(), validate.checkUserData,controller.updateUser);  
 
 // delete deleteUser
-router.delete('/:id', validate.userRules(controller.deleteUser));
+router.delete('/:id', controller.deleteUser);
+

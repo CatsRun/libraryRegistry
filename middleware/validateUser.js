@@ -41,12 +41,16 @@ validate.userRules = () => {
         .notEmpty()
         // .isLength({ min: 10 })
         .withMessage("Please provide a valid number."),
-
-
     ]
-
-
 }
+
+validate.checkUserData = (req, res, next) => {
+const errors = validationResult(req);
+if (!errors.isEmpty()) {
+return res.status(400).json({ errors: errors.array() });
+}
+next();
+};
 
 
 module.exports = validate
