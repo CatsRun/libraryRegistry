@@ -72,5 +72,6 @@ const deleteUser = async (req, res) => {
   }
 };
 
+// does id exist? add, if id !exist... error
 
 module.exports = { getAll, getSingle, createUser, updateUser, deleteUser };

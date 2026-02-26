@@ -6,7 +6,7 @@ const validate = require('../middleware/validateUser');
 // routes that connect to controllers functions
 
 //getAll
-// router.get('/', controller.getAll);
+router.get('/', controller.getAll);
 
 // // getSingle
 // router.get('/:id', controller.getSingle);
@@ -20,7 +20,6 @@ const validate = require('../middleware/validateUser');
 // // delete deleteUser
 // router.delete('/:id', controller.deleteUser);
 
-module.exports = router;
 
 // // getSingle
 router.get('/:id',  controller.getSingle);
@@ -34,3 +33,4 @@ router.put('/:id', validate.userRules(), validate.checkUserData,controller.updat
 // delete deleteUser
 router.delete('/:id', controller.deleteUser);
 
+module.exports = router;
