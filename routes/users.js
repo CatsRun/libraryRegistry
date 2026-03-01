@@ -11,19 +11,6 @@ const authLogin = require('../middleware/auth')
 router.get('/', authLogin.loggedIn, controller.getAll);
 
 // // getSingle
-// router.get('/:id', controller.getSingle);
-
-// // post createUser
-// router.post('/', controller.createUser);
-
-// // put updateUser
-// router.put('/:id', controller.updateUser);  
-
-// // delete deleteUser
-// router.delete('/:id', controller.deleteUser);
-
-
-// // getSingle
 router.get('/:id',  controller.getSingle);
 
 // post createUser

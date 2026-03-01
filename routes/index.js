@@ -14,9 +14,7 @@ const welcomeMessage = `
     <h1>Sign in</h1>
 <a class="button google" href="/login/federated/google">Sign in with Google</a>`
     ;
-    // add logout
-
-    
+    // add logout    
     
 router.get('/', (req, res) => {
   res.send(welcomeMessage);
