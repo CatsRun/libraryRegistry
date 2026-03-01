@@ -3,10 +3,12 @@ const router = express.Router();
 const controller = require('../controllers/users');
 const validate = require('../middleware/validateUser');
 
+const authLogin = require('../middleware/auth')
+
 // routes that connect to controllers functions
 
 //getAll
-router.get('/', controller.getAll);
+router.get('/', authLogin.loggedIn, controller.getAll);
 
 // // getSingle
 // router.get('/:id', controller.getSingle);
