@@ -108,11 +108,17 @@ router.get('/oauth2/redirect/google',
 
 // Optional: logout route
 router.get('/logout', (req, res, next) => {
+  console.log("does this work?")
   req.logout((err) => {
     if (err) { return next(err); }
     res.redirect('/');
   });
 });
+// tell google user is logged out, with access token. or put in database use logout. 
+
+// await fetch(`https://oauth2.googleapis.com{accessToken}`, { method: 'POST' });
+
+
 
 // router.post('/logout', function(req, res, next) {
 //   req.logout(function(err) {    
